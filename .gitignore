@@ -13,9 +13,6 @@ update-log.txt
 kiosk-browser-profile/
 kiosk-profile/
 
-# Build scripts (one-time tooling, not part of the deployable app)
-bake_assets.py
-
 # OS / cloud sync junk
 *.tmp
 .849C9593-D756-4E56-8D6E-42412F2A707B

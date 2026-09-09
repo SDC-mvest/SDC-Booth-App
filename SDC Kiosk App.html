@@ -1602,7 +1602,7 @@ const CaseCard = ({ c, onNavigate }) => {
   return (
     <button key={c.id} className="case-card" onClick={() => onNavigate({ name: "case-study-detail", id: c.id })}>
       {!thumbErr && c.image
-        ? <img className="case-card-img" src={IMG_PATH(c.image)} alt={c.title} onError={() => setThumbErr(true)} />
+        ? <img className="case-card-img" src={IMG_PATH(c.image)} alt={c.title} loading="lazy" decoding="async" onError={() => setThumbErr(true)} />
         : <div className="case-card-img-placeholder"><img src={ICON_PATH("Applications_Icon.svg")} alt="" /></div>
       }
       <div className="case-card-body">
@@ -1998,7 +1998,7 @@ const VideosScreen = ({ onNavigate, initialCat = "All", onCatChange }) => {
             <button key={v.id} className="video-card" onClick={() => onNavigate({ name: "video-detail", id: v.id, autoplay: true })}>
               <div className="video-card-thumb">
                 {c && c.image
-                  ? <img className="video-card-thumb-img" src={IMG_PATH(c.image)} alt={v.title} onError={e => { e.target.style.display="none"; }} />
+                  ? <img className="video-card-thumb-img" src={IMG_PATH(c.image)} alt={v.title} loading="lazy" decoding="async" onError={e => { e.target.style.display="none"; }} />
                   : null}
                 <div className="video-card-play-overlay">
                   <div className="video-card-play-btn"><PlayIcon size={22} /></div>
