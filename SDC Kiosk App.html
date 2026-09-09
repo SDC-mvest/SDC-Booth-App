@@ -751,12 +751,12 @@ video:fullscreen { width: 100vw; height: 100vh; object-fit: contain; background:
   background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel-3) 100%);
   border: 1px solid var(--blue); border-radius: 12px;
   padding: 0; color: var(--text); overflow: hidden;
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: row;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .featured-card:hover { transform: translateY(-2px); background: var(--panel-3); }
-.featured-card-banner { width: 100%; height: 90px; object-fit: cover; display: block; border-bottom: 1px solid var(--blue); }
-.featured-card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.featured-card-thumb { width: 100px; flex-shrink: 0; height: auto; object-fit: cover; display: block; border-right: 1px solid var(--blue); }
+.featured-card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; }
 .featured-kicker {
   font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--green);
@@ -1589,7 +1589,7 @@ const HomeScreen = ({ onNavigate }) => {
             return (
               <button key={c.id} className="featured-card"
                 onClick={() => onNavigate({ name: "case-study-detail", id: c.id })}>
-                {thumb && <img className="featured-card-banner" src={IMG_PATH(thumb)} alt="" />}
+                {thumb && <img className="featured-card-thumb" src={IMG_PATH(thumb)} alt="" />}
                 <div className="featured-card-body">
                   <div className="featured-kicker">{c.status}</div>
                   <div className="featured-hook">{c.hook}</div>
