@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>SDC Kiosk — Automate 2026</title>
+<title>SDC Kiosk — Alcon Technology Expo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +10,7 @@
 
 <style>
 /* =================================================================
-   SDC Kiosk — Automate 2026
+   SDC Kiosk — Alcon Technology Expo (A Future In Focus)
    Brand: Steven Douglas Corp. (sdcautomation.com)
    Colors: Primary Blue #1574C4 · Dark Navy #061D39 · Accent Green #74C415
    ================================================================= */
@@ -732,6 +732,109 @@ video:fullscreen { width: 100vw; height: 100vh; object-fit: contain; background:
 
 /* Scrollable case list helper */
 .scrollable-list { max-height: 740px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border-2) transparent; }
+
+/* ===== ALCON BUILD ADDITIONS ============================================== */
+
+/* Co-brand chip in the hero (keeps the customer mark in its own colours) */
+.cobrand-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; border-radius: 10px;
+  padding: 10px 20px; margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.cobrand-chip img { height: 38px; width: auto; display: block; }
+
+/* Featured strip on Home */
+.featured-strip { display: flex; gap: 12px; margin-bottom: 16px; }
+.featured-card {
+  flex: 1; text-align: left; cursor: pointer;
+  background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel-3) 100%);
+  border: 1px solid var(--blue); border-radius: 12px;
+  padding: 14px 16px 16px; color: var(--text);
+  display: flex; flex-direction: column; gap: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.featured-card:hover { transform: translateY(-2px); background: var(--panel-3); }
+.featured-kicker {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green);
+}
+.featured-hook { font-size: 17px; font-weight: 800; line-height: 1.2; }
+.featured-name { font-size: 13px; font-weight: 600; color: var(--text-dim); line-height: 1.35; }
+.featured-stat { margin-top: auto; font-size: 13px; font-weight: 700; color: var(--blue-2); }
+.featured-lead {
+  font-size: 15px; font-weight: 600; color: var(--text-dim);
+  margin: 0 0 12px; letter-spacing: 0.01em;
+}
+
+/* Status pill */
+.status-pill {
+  display: inline-block; padding: 6px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 800; letter-spacing: 0.02em;
+  background: rgba(116, 196, 21, 0.14); color: var(--green);
+  border: 1px solid rgba(116, 196, 21, 0.5);
+}
+.case-card-status { color: var(--green); font-weight: 700; font-size: 13px; }
+
+/* Photo gallery */
+.gallery { display: flex; flex-direction: column; gap: 10px; }
+.gallery-main { position: relative; }
+.gallery-main img {
+  width: 100%; height: 400px; object-fit: cover;
+  border-radius: 10px; border: 1px solid var(--border); background: var(--panel-3);
+  display: block;
+}
+.gallery-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 54px; height: 54px; border-radius: 50%; cursor: pointer;
+  background: rgba(6, 29, 57, 0.82); border: 1px solid var(--blue);
+  color: #fff; font-size: 26px; font-weight: 700; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-nav:hover { background: var(--blue); }
+.gallery-prev { left: 12px; }
+.gallery-next { right: 12px; }
+.gallery-count {
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(6, 29, 57, 0.85); border: 1px solid var(--border-2);
+  color: var(--text); font-size: 13px; font-weight: 700;
+  padding: 5px 12px; border-radius: 999px;
+}
+.gallery-strip { display: flex; gap: 8px; flex-wrap: wrap; }
+.gallery-thumb {
+  width: 92px; height: 62px; padding: 0; cursor: pointer;
+  border-radius: 7px; overflow: hidden; background: var(--panel-3);
+  border: 2px solid var(--border);
+}
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-thumb.is-active { border-color: var(--blue); }
+
+/* Extended (5-section) case detail */
+.detail-scroll { max-height: 812px; overflow-y: auto; padding-right: 8px;
+  scrollbar-width: thin; scrollbar-color: var(--border-2) transparent; }
+.case-hook { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 6px; line-height: 1.12; }
+.case-hook-sub { font-size: 18px; font-weight: 600; color: var(--blue-2); margin: 0 0 14px; }
+.case-machine-name { font-size: 20px; font-weight: 700; color: var(--text); margin: 0 0 12px; }
+.section-card {
+  background: var(--panel-3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px 22px; margin-bottom: 14px;
+}
+.section-card-title {
+  font-size: 12px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue-2); margin-bottom: 12px;
+}
+.bullet-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.bullet-list li {
+  display: flex; gap: 11px; align-items: flex-start;
+  color: var(--text); font-size: 15px; font-weight: 500; line-height: 1.45;
+}
+.bullet-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+.close-line {
+  background: linear-gradient(90deg, rgba(21,116,196,0.18), rgba(116,196,21,0.10));
+  border: 1px solid var(--blue); border-radius: 12px;
+  padding: 16px 22px; font-size: 19px; font-weight: 800; color: var(--text);
+  margin-bottom: 14px;
+}
 </style>
 </head>
 <body>
@@ -841,9 +944,9 @@ window.SDC_DATA = {
     phone: "440-564-5200",
     address: "7750 Discovery Lane, Concord Twp, OH 44077",
     signature: "Whatever you do, SDC can help you do it better, faster, and more reliably.",
-    show: "Automate 2026",
-    booth: "#26011",
-    venue: "McCormick Place, Chicago"
+    show: "Alcon Technology Expo",
+    booth: "A Future In Focus",
+    venue: "Automation engineered for Alcon"
   },
 
   stats: [
@@ -856,7 +959,7 @@ window.SDC_DATA = {
   ],
 
   industries: [
-    { id: "life-sciences", name: "Life Sciences", icon: "Life Sciences Icon.svg", blurb: "Catheter assembly, endoscope tools, implant packaging, and Class II/III device automation. Micron-level precision and full regulatory traceability.", cases: ["automated-rf", "endoscope-brush", "microscopic-medical", "medical-feed-tube"] },
+    { id: "life-sciences", name: "Life Sciences", icon: "Life Sciences Icon.svg", blurb: "Ophthalmic device automation, IOL wafer processing, sterile package handling, catheter assembly, and Class II/III device automation. Micron-level precision and full regulatory traceability.", cases: ["alcon-picking-cracking", "alcon-casting", "alcon-sterilization-baskets", "alcon-rfid-labeling", "automated-rf", "endoscope-brush", "microscopic-medical", "medical-feed-tube"] },
     { id: "automotive", name: "Automotive", icon: "Automotive Icon.svg", blurb: "Ignition coil production, connector assembly, sensor integration, and high-speed small part assembly for Tier 1 & Tier 2 automotive suppliers.", cases: ["ignition-coil", "ev-charging", "automotive-dash"] },
     { id: "consumer", name: "Consumer Products", icon: "Consumer Products Icon.svg", blurb: "Fragrance diffusers, cap assembly, dispenser mechanisms, and flexible multi-SKU production lines running at rates up to 140+ parts per minute.", cases: ["wick-assembly", "hose-clamp-cartoning", "drill-bit", "precision-packaging", "custom-cartoning", "fluid-dispensing"] },
     { id: "electronics", name: "Electronics", icon: "Electronics Icon.svg", blurb: "Sub-assembly, functional test, inspection, and high-mix/low-volume flexible automation for electronic components and devices.", cases: ["precision-label", "industry-40-hmi", "electrical-small-part", "electrical-safety-switch"] },
@@ -878,6 +981,155 @@ window.SDC_DATA = {
   ],
 
   caseStudies: [
+    // == FEATURED FOR ALCON ====================================================
+    // NOTE: internal job numbers (1003 / 1029 / 1124 / 1145 / 1146 / 917) are
+    // deliberately NOT referenced anywhere in this file, per Riana.
+    // MEDIA PENDING: the image/video filenames below are the expected names.
+    // Drop files into "Image Files/" and "Video Files/" using these exact names
+    // and they light up automatically; missing files fall back to placeholders.
+    { id: "alcon-picking-cracking", featured: true,
+      hook: "Two Dials. One Motion. Zero Hands.",
+      hookSub: "IOL wafer cracking, automated without slowing down.",
+      title: "Automated Picking and Cracking Machine", industry: "Life Sciences", industryId: "life-sciences",
+      capability: "Assembly · Robotic Integration · Machine Vision",
+      blurb: "Manual picking and cracking took roughly 17 minutes per 96-part batch, with every part hand-touched — contamination risk, dropped parts, ergonomic strain, and a hard capacity ceiling. A parallel-processing dual-dial architecture solves it: two full servo-driven indexing systems running simultaneously, each cracking two parts per index.",
+      problem: [
+        "Servo-driven indexing for precise, trackable part motion",
+        "SCARA robotics with automatic pitch adjustment on both infeed and outfeed — one gripper design accommodates two different tray arrangements, with no changeover",
+        "Inline machine vision verifies debris removal and part quality",
+        "Force-feedback cracking — cracks to a specified force rather than a fixed distance, feeding predictive-maintenance data on nest wear",
+      ],
+      proven: [
+        "Delivered and running in production today at the Huntington facility",
+        "Operates ambient (65°F ±30°) inside a regulated medical device process — no cleanroom HVAC required",
+        "Interfaces directly with Inductive Automation SCADA; Allen-Bradley PLC/HMI streams OEE data (cycle time, run time, good/reject counts) in real time",
+        "Auto-identifies tray types and calls the correct teach points — no manual reconfiguration",
+      ],
+      effort: [
+        "Timeline: ~32 weeks, PO to acceptance testing",
+        "Skills: standard PLC/HMI training — no specialized robotics programming",
+        "Infrastructure: 3-phase 208VAC (≤100A), standard shop air, onboard filtration",
+        "Staffing: 1 operator per shift runs the full system",
+      ],
+      close: "Built for Alcon. Proven in production. Designed to scale.",
+      technologies: ["Dual servo-driven indexing dials", "SCARA robotics with automatic pitch adjustment", "Force-feedback cracking stations", "Inline machine vision (debris & quality)", "Allen-Bradley PLC & HMI", "Inductive Automation SCADA interface"],
+      rate: "4 parts per index (2 dials × 2 parts)", leadTime: "32 weeks",
+      status: "In Production", hideInvestment: true,
+      keyImpact: "Removes every hand-touch from the picking and cracking process", delivered: "On-Time",
+      image: "Alcon Picking and Cracking 1.jpg",
+      images: ["Alcon Picking and Cracking 1.jpg", "Alcon Picking and Cracking 2.jpg", "Alcon Picking and Cracking 3.jpg", "Alcon Picking and Cracking 4.jpg", "Alcon Picking and Cracking 5.jpg", "Alcon Picking and Cracking 6.jpg"],
+      video: "Alcon Picking and Cracking Machine.mp4" },
+
+    { id: "alcon-casting", featured: true,
+      hook: "Two Arms, One Rhythm, Zero Downtime.",
+      hookSub: "Next-generation casting cells that keep pace without missing a fill.",
+      title: "Next Generation Automated Casting Machine", industry: "Life Sciences", industryId: "life-sciences",
+      capability: "Robotic Integration · Dispensing · Machine Vision",
+      blurb: "Casting cells need speed and precision on every fill, and any humidity spike risks micro-vacuoles in the finished lens. Dual-arm parallel robotics solve it: one arm places the mold on the pump nozzle using machine vision for exact positioning, while the second grips and holds it during fill, then carries it to the output tray with fill holes always facing up.",
+      problem: [
+        "Servo-driven syringe dosing pump — precise, repeatable monomer volume control",
+        "Vision-guided fill verification confirms monomer flow out of the top hole every cycle",
+        "Force-sensing end-of-arm tooling detects mis-load or syringe/wafer contact and auto-rejects bad parts before they reach the oven",
+        "Active low-humidity environment (<5% RH capable) with 4-zone dry-air purge protects a moisture-sensitive monomer",
+        "Platform upgrades now standard across all four units: tinted glass work-area panels, improved antechamber door and visual access, a wedge guard preventing filter-clamp crashes, syringe pump positioning pins, an upgraded tray-transfer valve for safer operator access, and a higher-capacity Vortec cooler",
+      ],
+      // TODO -- CONFIRM WITH ALCON before presenting as "running now": the
+      // newest-build unit passed SAT but was not yet in full production as of
+      // last update, and two casting cells are relocating from the South plant
+      // to the North plant (expected September, around the time of the expo).
+      proven: [
+        "Four identical machines delivered — three original units plus one later build; the later build's upgrades have since been retrofitted to the original three, so all four machines are now identical",
+        "Validated at FAT: 37 parts/min machine rate, ~3.5 sec dosing time per part (dose + dwell), consistent with the ~6.3–6.5 sec/mold cycle times observed across the fleet",
+        "90% uptime target across 3 shifts, 6.75 available hours/day, 5 days/week, running all four machines together",
+        "Only 2 operators needed to run 4 machines per shift",
+        "SCADA integration via OPC-UA to the PLC, tying into the Application Database, Active Directory, and SAP/MII",
+        "Barcode-driven recipe and teach-point selection — auto-detects tunnel vs. batch oven tray type, no manual reconfiguration",
+      ],
+      effort: [
+        "Timeline: 32 weeks, first system to client acceptance testing",
+        "Skills: standard PLC/HMI operation; no specialized robotics programming for day-to-day running",
+        "Infrastructure: 3-phase 208VAC (≤100A), 75–90 PSI shop air, dedicated humidity control equipment",
+        "Staffing: 0.5 operator per shift per machine (2 operators across 4 machines)",
+      ],
+      close: "Built for Alcon. Engineered for precision at scale.",
+      technologies: ["Dual-arm parallel 6-axis robotics", "Servo-driven syringe dosing pump", "Vision-guided fill verification", "Force-sensing end-of-arm tooling", "4-zone dry-air purge (<5% RH capable)", "OPC-UA SCADA integration"],
+      rate: "37 parts/min per machine", leadTime: "32 weeks",
+      status: "4 Units Delivered · Validated at FAT", hideInvestment: true,
+      keyImpact: "Two operators run four machines per shift", delivered: "On-Time",
+      image: "Alcon Casting Machine 1.jpg",
+      images: ["Alcon Casting Machine 1.jpg", "Alcon Casting Machine 2.jpg", "Alcon Casting Machine 3.jpg", "Alcon Casting Machine 4.jpg", "Alcon Casting Machine 5.jpg", "Alcon Casting Machine 6.jpg"],
+      video: "Alcon Casting Machine.mp4" },
+
+    { id: "alcon-sterilization-baskets", featured: true,
+      hook: "From Basket to Belt, Untouched.",
+      hookSub: "Automated sterilization basket load and unload, working as one system.",
+      title: "Sterilization Basket Load & Unload Automation", industry: "Life Sciences", industryId: "life-sciences",
+      capability: "Material Handling & Packaging · Robotic Integration · Machine Vision",
+      blurb: "Two purpose-built machines work in sequence to eliminate manual handling of sterile packages between the primary packaging line, sterilization, and secondary packaging — a process that previously required manual loading and unloading, with sterility and ergonomic exposure at every touch.",
+      problem: [
+        "Basket Load: a servo pick axis with six vacuum grippers picks packages one at a time from the primary packaging line, overlapping flanges to fit basket width, then hands off to a 6-axis EPSON robot that places rows into sterilization baskets — vision confirms placement location before each pick and verifies correct placement afterward, and barcode reading confirms batch identity before placement",
+        "Basket Unload: vision images the basket to verify row location and part count, then a 6-axis EPSON robot picks the row and places parts on a slow, flat belt conveyor; a second camera confirms the parts were picked and establishes the next pick position",
+        "Parts move from the slow belt onto a faster belt to separate them, where an overhead camera locates each part and guides a SCARA robot to pick and place it directly onto the Schubert secondary packaging machine's infeed",
+        "The same cell can be re-taught to run either wagon-wheel or future delivery-device formats",
+        "Blister seal inspection and foil height inspection are being added to the basket load infeed as part of this build",
+      ],
+      // TODO -- CONFIRM WITH ALCON: not yet in production; currently at SDC.
+      // Confirm install/production timeline before presenting as "running now".
+      proven: [
+        "Rated throughput: ~44 packages/min on basket load, 52 packages/min on basket unload, each targeting 90% uptime",
+        "I/O handshake integration with the upstream primary packaging machine and the Schubert secondary packaging machine — no modification to either machine's existing control architecture",
+        "Barcode-driven batch tracking keeps sterilization batches intact automatically, with no manual batch splitting",
+      ],
+      effort: [
+        "Timeline: 27 weeks, design/build to customer acceptance testing (basket load)",
+        "Skills: standard Allen-Bradley PLC/HMI operation; remote-access diagnostics reduce on-site troubleshooting",
+        "Infrastructure: 3-phase 208VAC (≤100A), ≤90 PSI shop air, no special utilities beyond standard machine requirements",
+        "Staffing: max 2 operators/shift on basket load; up to 3 operators/shift on basket unload feeding the full secondary packaging line",
+      ],
+      close: "Two machines. One seamless flow. Built for Alcon, engineered for sterility.",
+      technologies: ["Servo pick axis with six vacuum grippers", "Two 6-axis EPSON robots", "SCARA robot with overhead vision guidance", "Multi-camera placement verification", "Barcode-driven batch tracking", "Allen-Bradley PLC & HMI with remote diagnostics"],
+      rate: "44 pkg/min load · 52 pkg/min unload", leadTime: "27 weeks",
+      status: "In Build at SDC", hideInvestment: true,
+      keyImpact: "Removes every manual touch between packaging and sterilization", delivered: "On Schedule",
+      image: "Alcon Sterilization Basket 1.jpg",
+      images: ["Alcon Sterilization Basket 1.jpg", "Alcon Sterilization Basket 2.jpg", "Alcon Sterilization Basket 3.jpg", "Alcon Sterilization Basket 4.jpg", "Alcon Sterilization Basket 5.jpg", "Alcon Sterilization Basket 6.jpg"],
+      video: "Alcon Sterilization Basket Automation.mp4" },
+
+    { id: "alcon-rfid-labeling", featured: true,
+      hook: "One Ring, Ten Stations, Zero Mix-Ups.",
+      hookSub: "Tag, verify, and track every package at 2,400 units per hour.",
+      title: "RFID Labeling and Processing Machine", industry: "Life Sciences", industryId: "life-sciences",
+      capability: "Material Handling & Packaging · Machine Vision · Testing & Inspection",
+      blurb: "Manual and legacy RFID tagging couldn't keep pace or reliably guarantee tag placement, and any batch mix-up in a regulated environment is a costly problem. A servo-driven parallel-processing ring solves it: ten fixtures per package type (20 total) index in about 0.5 sec, giving each of the ring's ten stations a full second to complete its operation — tag application, verification, and read/write all happen in parallel, not in series.",
+      problem: [
+        "High-speed pick-and-place loads packages from a 12-stack indexing table — auto-selects the correct fixture size, no changeover",
+        "Inline machine vision confirms RFID tag presence and correct placement before the package moves on",
+        "Dual barcode scanners (top and bottom) plus RFID write/read/verify stations build a full traceability record on every package",
+        "Auto bad-tag removal: when a bad RFID tag is detected, a paddle ejects it and the machine automatically re-runs a new tag, cutting manual intervention",
+        "Magazine barcode camera identifies and tracks the magazine in station through the entire process, adding another layer of traceability",
+      ],
+      proven: [
+        "Delivered and running in production today, processing Wagon Wheel lens and Blister Pouch packages side-by-side on the same ring with no manual changeover",
+        "Built for a regulated environment — designed for ISO Class 8 cleanroom operation",
+        "Allen-Bradley PLC with 10-inch HMI; all processing, disposition, and traceability data written to a networked database for full batch-level audit history",
+        "Every event — tag write, tag read, equivalency check, pass/fail — is logged with operator ID, timestamp, and status",
+      ],
+      effort: [
+        "Skills: standard PLC/HMI operation; the system authenticates operators via barcode scan at login",
+        "Infrastructure: 3-phase 220VAC (≤100A), <90 PSI shop air, UPS backup (15 min minimum)",
+        "Staffing: designed to run with 1 operator per shift",
+        "Environment: rated for 10–30°C, <90% RH — fits standard cleanroom conditions without special conditioning",
+      ],
+      close: "Built for Alcon. Proven in production. Engineered for full traceability at speed.",
+      technologies: ["Servo-driven 10-station parallel processing ring", "20 fixtures (10 per package type)", "RFID write / read / verify stations", "Inline tag-placement machine vision", "Dual barcode scanners plus magazine camera", "Allen-Bradley PLC with 10-inch HMI and networked database"],
+      rate: "2,400 units per hour",
+      status: "In Production", hideInvestment: true,
+      keyImpact: "Two package formats on one ring with no manual changeover", delivered: "On-Time",
+      image: "Alcon RFID Labeling 1.jpg",
+      images: ["Alcon RFID Labeling 1.jpg", "Alcon RFID Labeling 2.jpg", "Alcon RFID Labeling 3.jpg", "Alcon RFID Labeling 4.jpg", "Alcon RFID Labeling 5.jpg", "Alcon RFID Labeling 6.jpg"],
+      video: null },
+
+    // == SDC PORTFOLIO =========================================================
     // ── TOP PRIORITY ──────────────────────────────────────────────────────────
     { id: "precision-packaging", title: "Precision Packaging Automation Line", industry: "Consumer Products", industryId: "consumer", capability: "Robotic Integration · Material Handling · Machine Vision · Dispensing", blurb: "12 FANUC SCARA robots, SDC tray handling, 30 Cognex barcode readers, Ignition HMI with SQL — 60,000 cartons per day, 10× fulfillment speed increase.", technologies: ["12 FANUC SCARA robots", "SDC servo-controlled box erectors", "30+ servo motors", "Ignition HMI with Allen Bradley PLC", "30 Cognex DM374 barcode readers", "Mettler Toledo weighing terminal"], rate: "60,000 cartons/day", investment: "$2M+", leadTime: "44–52 weeks", keyImpact: "First Ignition HMI project; templates now standard", delivered: "On-Time", image: "Precision Packaging Automation Line.jpg", video: "Precision Packaging Automation Line.mp4" },
     { id: "medical-feed-tube", title: "Automatic Medical Feed Tube Assembly", industry: "Life Sciences", industryId: "life-sciences", capability: "Robotic Integration · Material Handling · Assembly · Dispensing", blurb: "Three FANUC LR Mate 200iD robots, SDC Flex Feeders, custom dereeling, dual solvent dipping stations — 240 assemblies per hour. Automated fiberglass handling improved safety.", technologies: ["Three FANUC LR Mate 200iD robots", "FANUC vision with Banner lighting", "SDC Flex Feeding with vision", "Custom servo-driven tube dereeling/cutting", "Allen Bradley PLC & HMI"], rate: "4 PPM (240/hr)", investment: "$750K–$1M", leadTime: "28–32 weeks", keyImpact: "Fiberglass handling automated; improved safety", delivered: "On-Time", image: "Automatic Medical Feed Tube Assembly.png", video: "Automatic Medical Feed Tube Assembly.mp4" },
@@ -916,6 +1168,9 @@ window.SDC_DATA = {
   ],
 
   videos: [
+    { id: "v-alcon-picking-cracking", caseId: "alcon-picking-cracking", title: "Automated Picking and Cracking Machine", industry: "Life Sciences", category: "Life Sciences", tags: ["Dual Dial", "SCARA", "Force Feedback"], file: "Alcon Picking and Cracking Machine.mp4" },
+    { id: "v-alcon-casting", caseId: "alcon-casting", title: "Next Generation Automated Casting Machine", industry: "Life Sciences", category: "Life Sciences", tags: ["Dual-Arm Robotics", "Dispensing", "Vision"], file: "Alcon Casting Machine.mp4" },
+    { id: "v-alcon-sterilization-baskets", caseId: "alcon-sterilization-baskets", title: "Sterilization Basket Load & Unload Automation", industry: "Life Sciences", category: "Life Sciences", tags: ["EPSON Robotics", "Vision Guided", "Sterile Packaging"], file: "Alcon Sterilization Basket Automation.mp4" },
     { id: "v-precision-pkg", caseId: "precision-packaging", title: "Precision Packaging Automation Line", industry: "Consumer Products", category: "Consumer Products", tags: ["12 FANUC SCARAs", "60K cartons/day", "Ignition HMI"], file: "Precision Packaging Automation Line.mp4" },
     { id: "v-med-tube", caseId: "medical-feed-tube", title: "Automatic Medical Feed Tube Assembly", industry: "Life Sciences", category: "Life Sciences", tags: ["Three FANUC LR Mates", "Fiberglass handling", "240/hr"], file: "Automatic Medical Feed Tube Assembly.mp4" },
     { id: "v-rf", caseId: "automated-rf", title: "Automated Board Tuning", industry: "Life Sciences", category: "Life Sciences", tags: ["Dual robot", "RF measurement", "Mecademic"], file: "Automated RF Circuit Board Tuning Case Study.mp4" },
@@ -1199,7 +1454,7 @@ const Header = ({ route, onNavigate, onBack, onHome, title }) => {
           )}
           {isHome && (
             <div className="show-badge">
-              Automate 2026 &nbsp;·&nbsp; Booth <span>#26011</span>
+              Alcon Technology Expo &nbsp;·&nbsp; <span>A Future In Focus</span>
             </div>
           )}
         </div>
@@ -1272,6 +1527,22 @@ const Frame = ({ route, onNavigate, onBack, onHome, title, children }) => (
 );
 
 // ─── HOME SCREEN ─────────────────────────────────────────────────────────────
+// ---- CO-BRAND CHIP (Alcon build) -------------------------------------------
+// Renders the customer logo on a white chip so the mark keeps its own colour on
+// the blue hero. Opt-in by file presence: if "Customer Logo Files/Alcon Logo.png"
+// is absent (or fails to load) nothing renders and the hero looks as it does now.
+// Use the logo at its native colours here -- do NOT route it through the
+// scrolling logo bar, whose invert/screen filter is built for transparent PNGs.
+const CoBrandChip = () => {
+  const [ok, setOk] = useState(true);
+  if (!ok) return null;
+  return (
+    <div className="cobrand-chip">
+      <img src={LOGO_PATH("Alcon Logo.png")} alt="Alcon" onError={() => setOk(false)} />
+    </div>
+  );
+};
+
 const HomeScreen = ({ onNavigate }) => {
   const D = window.SDC_DATA;
   const cards = [
@@ -1286,14 +1557,29 @@ const HomeScreen = ({ onNavigate }) => {
     <>
       <div className="hero">
         <div className="hero-left">
-          <h1 className="hero-title">Custom Automated Machines</h1>
-          <p className="hero-sub">Engineering Excellence. Trusted Partnerships.</p>
+          <CoBrandChip />
+          <h1 className="hero-title">Automation Built for Alcon</h1>
+          <p className="hero-sub">A Future In Focus &nbsp;&middot;&nbsp; Engineering Excellence. Trusted Partnerships.</p>
         </div>
         <div className="hero-right">
           <TouchOrb onClick={() => onNavigate({ name: "case-studies" })} />
         </div>
       </div>
       <div className="screen-content" style={{paddingBottom: 20}}>
+        <div className="featured-lead">
+          Four Alcon machines, engineered and built by SDC &mdash; tap any one to see the technology, the proof, and what it takes to adopt.
+        </div>
+        <div className="featured-strip">
+          {D.caseStudies.filter(c => c.featured).map(c => (
+            <button key={c.id} className="featured-card"
+              onClick={() => onNavigate({ name: "case-study-detail", id: c.id })}>
+              <div className="featured-kicker">{c.status}</div>
+              <div className="featured-hook">{c.hook}</div>
+              <div className="featured-name">{c.title}</div>
+              <div className="featured-stat">{c.rate}</div>
+            </button>
+          ))}
+        </div>
         <div className="home-grid">
           {cards.map(c => (
             <button key={c.nav} className="home-card" onClick={() => onNavigate({ name: c.nav })}>
@@ -1305,7 +1591,6 @@ const HomeScreen = ({ onNavigate }) => {
             </button>
           ))}
         </div>
-        <LogoBar />
       </div>
     </>
   );
@@ -1329,7 +1614,9 @@ const CaseCard = ({ c, onNavigate }) => {
         <div className="case-card-blurb">{c.blurb}</div>
         <div className="case-card-footer">
           <div className="case-card-rate">{c.rate}</div>
-          <div className="case-card-lead">{c.leadTime}</div>
+          {c.status
+            ? <div className="case-card-status">{c.status}</div>
+            : <div className="case-card-lead">{c.leadTime}</div>}
         </div>
       </div>
     </button>
@@ -1342,6 +1629,8 @@ const CaseStudiesScreen = ({ onNavigate, filterIndustryId, filterIndustryName })
   const items = filterIndustryId
     ? D.caseStudies.filter(c => c.industryId === filterIndustryId)
     : D.caseStudies.filter(c => !c.hideFromCaseStudies);
+  const featured = items.filter(c => c.featured);
+  const rest = items.filter(c => !c.featured);
 
   return (
     <>
@@ -1349,13 +1638,140 @@ const CaseStudiesScreen = ({ onNavigate, filterIndustryId, filterIndustryName })
         kicker={filterIndustryName ? `Industry · ${filterIndustryName}` : null}
         title="Case Studies"
       />
-      <div className="case-card-grid scrollable-list" style={{maxHeight:740}}>
-        {items.map(c => <CaseCard key={c.id} c={c} onNavigate={onNavigate} />)}
+      <div className="scrollable-list" style={{maxHeight:760}}>
+        {featured.length > 0 && (
+          <>
+            <div className="featured-kicker" style={{marginBottom:8}}>Built for Alcon</div>
+            <div className="case-card-grid" style={{marginBottom:22}}>
+              {featured.map(c => <CaseCard key={c.id} c={c} onNavigate={onNavigate} />)}
+            </div>
+          </>
+        )}
+        {rest.length > 0 && (
+          <>
+            <div className="featured-kicker" style={{marginBottom:8,color:"var(--blue-2)"}}>More from the SDC portfolio</div>
+            <div className="case-card-grid">
+              {rest.map(c => <CaseCard key={c.id} c={c} onNavigate={onNavigate} />)}
+            </div>
+          </>
+        )}
       </div>
     </>
   );
 };
 
+// ---- PHOTO GALLERY (Alcon build) -------------------------------------------
+const CaseGallery = ({ images, title }) => {
+  const [idx, setIdx] = useState(0);
+  const [bad, setBad] = useState({});
+  const ok = (images || []).filter(f => !bad[f]);
+
+  if (!ok.length) {
+    return (
+      <div className="case-image-placeholder">
+        <img src={ICON_PATH("Applications_Icon.svg")} alt="" style={{width:40,height:40,opacity:0.3}} />
+        <span>{title} &mdash; photos coming soon</span>
+      </div>
+    );
+  }
+  const i = Math.min(idx, ok.length - 1);
+  const cur = ok[i];
+  const markBad = f => setBad(b => ({ ...b, [f]: true }));
+
+  return (
+    <div className="gallery">
+      <div className="gallery-main">
+        <img src={IMG_PATH(cur)} alt={`${title} ${i + 1}`} onError={() => markBad(cur)} />
+        {ok.length > 1 && (
+          <>
+            <button className="gallery-nav gallery-prev" aria-label="Previous photo"
+              onClick={() => setIdx((i - 1 + ok.length) % ok.length)}>&#8249;</button>
+            <button className="gallery-nav gallery-next" aria-label="Next photo"
+              onClick={() => setIdx((i + 1) % ok.length)}>&#8250;</button>
+            <div className="gallery-count">{i + 1} / {ok.length}</div>
+          </>
+        )}
+      </div>
+      {ok.length > 1 && (
+        <div className="gallery-strip">
+          {ok.map((f, n) => (
+            <button key={f} className={`gallery-thumb${n === i ? " is-active" : ""}`}
+              onClick={() => setIdx(n)} aria-label={`Photo ${n + 1}`}>
+              <img src={IMG_PATH(f)} alt="" onError={() => markBad(f)} />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ---- SECTION CARD ----------------------------------------------------------
+const BulletCard = ({ title, items }) => (
+  <div className="section-card">
+    <div className="section-card-title">{title}</div>
+    <ul className="bullet-list">
+      {items.map((t, i) => <li key={i}><span className="bullet-dot" />{t}</li>)}
+    </ul>
+  </div>
+);
+
+// ---- EXTENDED CASE DETAIL (5-section format) -------------------------------
+const FeaturedCaseDetail = ({ c, video, onNavigate }) => (
+  <div className="detail-scroll">
+    <div className="detail-meta">
+      <Pill variant="primary">{c.industry}</Pill>
+      {c.capability.split("\u00b7").slice(0, 2).map(cap => <Pill key={cap.trim()} variant="navy">{cap.trim()}</Pill>)}
+      {c.status && <span className="status-pill">{c.status}</span>}
+    </div>
+    <h2 className="case-hook">{c.hook || c.title}</h2>
+    {c.hookSub && <p className="case-hook-sub">{c.hookSub}</p>}
+    {c.hook && <div className="case-machine-name">{c.title}</div>}
+    <div className="detail-badges">
+      {c.rate && <span className="badge badge-primary">Rate: {c.rate}</span>}
+      {c.leadTime && <span className="badge badge-navy">Lead Time: {c.leadTime}</span>}
+      {!c.hideInvestment && c.investment && <span className="badge badge-navy">Investment: {c.investment}</span>}
+    </div>
+
+    <div className="detail-grid">
+      <div>
+        <CaseGallery images={c.images && c.images.length ? c.images : (c.image ? [c.image] : [])} title={c.title} />
+        <div style={{height:14}} />
+        <div className="section-card">
+          <div className="section-card-title">The Technology &amp; The Problem It Solves</div>
+          <p style={{margin:"0 0 14px",fontSize:16,fontWeight:500,color:"var(--text-dim)",lineHeight:1.55}}>{c.blurb}</p>
+          {c.problem && (
+            <ul className="bullet-list">
+              {c.problem.map((t, i) => <li key={i}><span className="bullet-dot" />{t}</li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+      <div>
+        {c.proven && <BulletCard title="Proven &amp; Integrated" items={c.proven} />}
+        {c.effort && <BulletCard title="Effort to Adopt" items={c.effort} />}
+        {c.close && <div className="close-line">{c.close}</div>}
+        <div className="highlights-card">
+          {c.technologies && (
+            <>
+              <div className="highlights-title">Technologies Used</div>
+              <div className="tech-tags" style={{marginTop:0,marginBottom: video ? 18 : 0}}>
+                {c.technologies.map((t, i) => <span key={i} className="tech-tag">{t}</span>)}
+              </div>
+            </>
+          )}
+          {video && !c.hideVideoButton && (
+            <button className="watch-btn" onClick={() => onNavigate({ name: "video-detail", id: video.id, autoplay: true })}>
+              <PlayIcon size={20} /> Watch Project Video
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// --- CASE STUDY DETAIL ------------------------------------------------------
 // ─── CASE STUDY DETAIL ───────────────────────────────────────────────────────
 const CaseStudyDetail = ({ id, onNavigate }) => {
   const D = window.SDC_DATA;
@@ -1363,6 +1779,8 @@ const CaseStudyDetail = ({ id, onNavigate }) => {
   if (!c) return null;
   const video = D.videos.find(v => v.caseId === c.id);
   const [imgError, setImgError] = useState(false);
+
+  if (c.featured) return <FeaturedCaseDetail c={c} video={video} onNavigate={onNavigate} />;
 
   return (
     <div className="detail-grid">
@@ -1374,7 +1792,7 @@ const CaseStudyDetail = ({ id, onNavigate }) => {
         <h2 className="detail-title">{c.title}</h2>
         <p className="detail-blurb">{c.blurb}</p>
         <div className="detail-badges">
-          <span className="badge badge-primary">Investment: {c.investment}</span>
+          {c.investment && <span className="badge badge-primary">Investment: {c.investment}</span>}
           <span className="badge badge-navy">Lead Time: {c.leadTime}</span>
           <span className="badge badge-navy">Rate: {c.rate}</span>
         </div>
@@ -1841,7 +2259,7 @@ const ContactScreen = () => {
             <div className="contact-label">Talk to engineering</div>
             <a className="contact-phone" href={`tel:${D.phone}`}>{D.phone}</a>
             <a className="contact-email" href={`mailto:${D.email}`}>{D.email}</a>
-            <a href={`mailto:SDC Sales <${D.email}>?subject=Project Inquiry — Automate 2026&body=Hi SDC team,%0D%0A%0D%0AI'd like to learn more about your automation capabilities.%0D%0A%0D%0A`}
+            <a href={`mailto:SDC Sales <${D.email}>?subject=Project Inquiry — Alcon Technology Expo&body=Hi SDC team,%0D%0A%0D%0AI'd like to learn more about your automation capabilities.%0D%0A%0D%0A`}
               style={{display:"inline-flex",alignItems:"center",gap:10,marginTop:12,
                 background:"var(--blue)",color:"#fff",borderRadius:10,
                 padding:"13px 22px",fontWeight:700,fontSize:16,textDecoration:"none",
@@ -1874,8 +2292,8 @@ const ContactScreen = () => {
             </div>
           </div>
           <div style={{background:"var(--panel-2)",border:"1px solid var(--border)",borderRadius:10,padding:"16px 20px"}}>
-            <div className="contact-label" style={{marginBottom:8}}>Automate 2026 · Booth #26011</div>
-            <div style={{color:"var(--text)",fontWeight:700,fontSize:17}}>McCormick Place, Chicago</div>
+            <div className="contact-label" style={{marginBottom:8}}>{D.show} · {D.booth}</div>
+            <div style={{color:"var(--text)",fontWeight:700,fontSize:17}}>{D.venue}</div>
             <div style={{color:"var(--text-dim)",fontSize:14,marginTop:3}}>June 22–25, 2026 · North Hall</div>
           </div>
         </div>
