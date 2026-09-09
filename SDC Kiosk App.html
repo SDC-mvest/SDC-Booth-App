@@ -808,6 +808,18 @@ video:fullscreen { width: 100vw; height: 100vh; object-fit: contain; background:
 }
 .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery-thumb.is-active { border-color: var(--blue); }
+.gallery-thumb-video { position: relative; }
+.gallery-play-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(6, 29, 57, 0.35); color: #fff; pointer-events: none;
+}
+.gallery-play-overlay .play-circle {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(6, 29, 57, 0.82); border: 1px solid var(--blue);
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-thumb-video .gallery-play-overlay .play-circle { width: 28px; height: 28px; border-width: 1px; }
 
 /* Extended (5-section) case detail */
 .detail-scroll { max-height: 812px; overflow-y: auto; padding-right: 8px;
@@ -1661,7 +1673,7 @@ const CaseStudiesScreen = ({ onNavigate, filterIndustryId, filterIndustryName })
 };
 
 // ---- PHOTO GALLERY (Alcon build) -------------------------------------------
-const CaseGallery = ({ images, title }) => {
+const CaseGallery = ({ images, title, video, onNavigate }) => {
   const [idx, setIdx] = useState(0);
   const [bad, setBad] = useState({});
   const ok = (images || []).filter(f => !bad[f]);
@@ -1677,11 +1689,20 @@ const CaseGallery = ({ images, title }) => {
   const i = Math.min(idx, ok.length - 1);
   const cur = ok[i];
   const markBad = f => setBad(b => ({ ...b, [f]: true }));
+  const watchVideo = () => onNavigate({ name: "video-detail", id: video.id, autoplay: true });
 
   return (
     <div className="gallery">
       <div className="gallery-main">
-        <img src={IMG_PATH(cur)} alt={`${title} ${i + 1}`} onError={() => markBad(cur)} />
+        {i === 0 && video ? (
+          <button className="gallery-thumb-video" style={{display:"block",width:"100%",padding:0,margin:0,border:0,background:"none",cursor:"pointer"}}
+            onClick={watchVideo} aria-label="Watch project video">
+            <img src={IMG_PATH(cur)} alt={`${title} ${i + 1}`} onError={() => markBad(cur)} />
+            <span className="gallery-play-overlay"><span className="play-circle"><PlayIcon size={26} /></span></span>
+          </button>
+        ) : (
+          <img src={IMG_PATH(cur)} alt={`${title} ${i + 1}`} onError={() => markBad(cur)} />
+        )}
         {ok.length > 1 && (
           <>
             <button className="gallery-nav gallery-prev" aria-label="Previous photo"
@@ -1695,9 +1716,11 @@ const CaseGallery = ({ images, title }) => {
       {ok.length > 1 && (
         <div className="gallery-strip">
           {ok.map((f, n) => (
-            <button key={f} className={`gallery-thumb${n === i ? " is-active" : ""}`}
-              onClick={() => setIdx(n)} aria-label={`Photo ${n + 1}`}>
+            <button key={f} className={`gallery-thumb${n === i ? " is-active" : ""}${n === 0 && video ? " gallery-thumb-video" : ""}`}
+              onClick={() => n === 0 && video ? watchVideo() : setIdx(n)}
+              aria-label={n === 0 && video ? "Watch project video" : `Photo ${n + 1}`}>
               <img src={IMG_PATH(f)} alt="" onError={() => markBad(f)} />
+              {n === 0 && video && <span className="gallery-play-overlay"><span className="play-circle"><PlayIcon size={14} /></span></span>}
             </button>
           ))}
         </div>
@@ -1735,7 +1758,7 @@ const FeaturedCaseDetail = ({ c, video, onNavigate }) => (
 
     <div className="detail-grid">
       <div>
-        <CaseGallery images={c.images && c.images.length ? c.images : (c.image ? [c.image] : [])} title={c.title} />
+        <CaseGallery images={c.images && c.images.length ? c.images : (c.image ? [c.image] : [])} title={c.title} video={video} onNavigate={onNavigate} />
         <div style={{height:14}} />
         <div className="section-card">
           <div className="section-card-title">The Technology &amp; The Problem It Solves</div>
