@@ -193,6 +193,16 @@ button { font-family: inherit; cursor: pointer; }
 .screen-content { padding: 24px 44px 32px; }
 .frame-body > .hero + .screen-content { padding-top: 0; }
 
+/* Page transition */
+.screen-transition { animation: screenFadeIn 0.32s ease both; }
+@keyframes screenFadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .screen-transition { animation: none; }
+}
+
 /* Section banner */
 .section-banner {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -1535,7 +1545,9 @@ const LogoBar = () => {
 const Frame = ({ route, onNavigate, onBack, onHome, title, children }) => (
   <div className="frame">
     <Header route={route} onNavigate={onNavigate} onBack={onBack} onHome={onHome} title={title} />
-    <div className="frame-body">{children}</div>
+    <div className="frame-body">
+      <div key={route.name + (route.id || "")} className="screen-transition">{children}</div>
+    </div>
     <Footer />
   </div>
 );
